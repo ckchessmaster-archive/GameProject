@@ -1,42 +1,47 @@
-//#include "Main.h"
-//#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <chrono>
+#include <SFML/Window.hpp>
+#include <SFML/OpenGL.hpp>
 
 int main()
 {
-	//sf::RenderWindow window(sf::VideoMode(1600, 900), "Game Engine");
-	//sf::CircleShape shape(100.f);
-	//shape.setFillColor(sf::Color::Green);
+	// create the window
+	sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, sf::ContextSettings(32));
+	window.setVerticalSyncEnabled(true);
 
-	//// run the program as long as the window is open
-	//while (window.isOpen())
-	//{
-	//	// check all the window's events that were triggered since the last iteration of the loop
-	//	sf::Event event;
-	//	while (window.pollEvent(event))
-	//	{
-	//		// "close requested" event: we close the window
-	//		if (event.type == sf::Event::Closed)
-	//			window.close();
-	//	}
+	// activate the window
+	window.setActive(true);
 
-	//	window.clear();
-	//	window.draw(shape);
-	//	window.display();
-	//}
+	// load resources, initialize the OpenGL states, ...
 
-	using namespace std::chrono;
-	std::cout << "Running sim...\n";
+	// run the main loop
+	bool running = true;
+	while (running)
+	{
+		// handle events
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+			{
+				// end the program
+				running = false;
+			}
+			else if (event.type == sf::Event::Resized)
+			{
+				// adjust the viewport when the window is resized
+				glViewport(0, 0, event.size.width, event.size.height);
+			}
+		}
 
-	int i = 0, endTime;
-	int startTime = duration_cast< milliseconds >(system_clock::now().time_since_epoch()).count();
+		// clear the buffers
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	while (i < 1000000000) {
-		i++;
+		// draw...
+
+		// end the current frame (internally swaps the front and back buffers)
+		window.display();
 	}
-	endTime = duration_cast< milliseconds >(system_clock::now().time_since_epoch()).count();
-	std::cout << "Total time: " << (endTime - startTime) << "ms\nFinal number: " << i << "\n";
+
+	// release resources...
 
 	return 0;
 }
