@@ -1,12 +1,6 @@
-#include "MainServer.h"
 
 
+int main() {
 
-MainServer::MainServer()
-{
-}
-
-
-MainServer::~MainServer()
-{
+	return 0;
 }

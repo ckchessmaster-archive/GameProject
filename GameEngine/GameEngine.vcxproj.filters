@@ -15,12 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="MainEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
