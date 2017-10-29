@@ -6,8 +6,16 @@ namespace Engine {
 	{
 	}
 
-
 	Game::~Game()
 	{
 	}
+		
+	void Game::init()
+	{
+	}
+
+	void Game::start()
+	{
+	}
+
 }

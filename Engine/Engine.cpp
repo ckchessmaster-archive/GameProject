@@ -5,8 +5,15 @@ namespace Engine {
 	{
 	}
 
-	void Engine::registerGame(Game *(*createGameInstance)())
+	void Engine::registerGame(Game* (*createGameInstance)())
 	{
 		Engine::createGameInstance = createGameInstance;
+	}
+	void Engine::init()
+	{
+	}
+
+	void Engine::start()
+	{
 	}
 }
