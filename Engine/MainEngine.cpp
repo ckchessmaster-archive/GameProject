@@ -6,6 +6,7 @@ int main()
 
 	engine.init();
 	engine.start();
+	engine.end();
 
 	return 0;
 }
