@@ -17,7 +17,12 @@ namespace Game {
 	void SpaceShooterGame::start()
 	{
 		Super::start();
+	}
 
-		std::cout << "Hello World!\n";
+	void SpaceShooterGame::tick()
+	{
+		Super::tick();
+
+		// game logic here
 	}
 }

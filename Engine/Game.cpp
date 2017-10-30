@@ -18,7 +18,6 @@ namespace Engine {
 
 	void Game::start()
 	{
-		std::cout << "Parent Hello!\n";
 	}
 
 	void Game::tick()
