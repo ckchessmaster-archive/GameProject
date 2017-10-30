@@ -71,10 +71,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Engine</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Engine\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Engine</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Engine\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -130,11 +130,13 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="MainEngine.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="testclass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="testclass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
