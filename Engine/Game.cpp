@@ -14,6 +14,7 @@ namespace Engine {
 
 	void Game::init()
 	{
+		tps = 60;
 	}
 
 	void Game::start()

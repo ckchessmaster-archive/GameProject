@@ -14,6 +14,11 @@ namespace Game {
 	{
 	}
 
+	void SpaceShooterGame::init() 
+	{
+		Super::init();
+	}
+
 	void SpaceShooterGame::start()
 	{
 		Super::start();

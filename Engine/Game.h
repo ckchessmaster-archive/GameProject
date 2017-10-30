@@ -2,6 +2,9 @@
 namespace Engine {
 	class Game
 	{
+	private:
+		int tps; //ticks per second
+
 	public:
 		Game();
 		~Game();

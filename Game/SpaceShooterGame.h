@@ -11,6 +11,7 @@ namespace Game {
 		SpaceShooterGame();
 		~SpaceShooterGame();
 
+		virtual void init();
 		virtual void start();
 		virtual void tick();
 	};
