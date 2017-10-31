@@ -9,6 +9,8 @@ namespace Engine {
 		Game();
 		~Game();
 
+		static void startThread(Game* game);
+
 		virtual void init();
 		virtual void start();
 		virtual void tick();

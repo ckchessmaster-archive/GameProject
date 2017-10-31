@@ -1,4 +1,5 @@
 #include "SpaceShooterGame.h"
+#include "Logger.h"
 
 #include <iostream>
 
@@ -17,11 +18,15 @@ namespace Game {
 	void SpaceShooterGame::init() 
 	{
 		Super::init();
+
+		Engine::Logger::log("Initializing SpaceShooterGame...");
 	}
 
 	void SpaceShooterGame::start()
 	{
 		Super::start();
+
+		Engine::Logger::log("Starting SpaceShooterGame...");
 	}
 
 	void SpaceShooterGame::tick()

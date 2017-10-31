@@ -1,6 +1,7 @@
 #include "Engine.h"
+#include "Logger.h"
 
-#include <iostream>
+#include <thread>
 
 namespace Engine {
 	Engine::Engine()
@@ -13,12 +14,18 @@ namespace Engine {
 
 	void Engine::init(Game* newGame)
 	{
+		Logger::init();
 		game = newGame;
 		game->init();
+		renderer.init();
 	}
 
 	void Engine::start()
 	{
-		game->start();
+		std::thread gameThread (&Game::startThread, game);
+		std::thread renderThread(&Renderer::startThread, renderer);
+
+		gameThread.join();
+		renderThread.join();
 	}
 }

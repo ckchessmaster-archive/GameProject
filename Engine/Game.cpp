@@ -12,6 +12,11 @@ namespace Engine {
 	{
 	}
 
+	void Game::startThread(Game* game)
+	{
+		game->start();
+	}
+
 	void Game::init()
 	{
 		tps = 60;
