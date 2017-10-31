@@ -32,7 +32,7 @@ namespace Game {
 	void SpaceShooterGame::tick()
 	{
 		Super::tick();
-
+		std::cout << "tick!";
 		// game logic here
 	}
 }

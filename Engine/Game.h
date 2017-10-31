@@ -1,9 +1,21 @@
 #pragma once
+
+#include <chrono>
+
 namespace Engine {
 	class Game
 	{
+		enum GameState {
+			starting,
+			running,
+			ending,
+			stopped
+		};
+
 	private:
 		int tps; //ticks per second
+
+		GameState gameState = stopped;
 
 	public:
 		Game();
