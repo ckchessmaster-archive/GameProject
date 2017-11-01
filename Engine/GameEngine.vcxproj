@@ -30,6 +30,10 @@
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="engine.cfg" />
+    <None Include="defaultGame.cfg" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{48E740A0-714E-45EE-A048-34E5FE93590B}</ProjectGuid>

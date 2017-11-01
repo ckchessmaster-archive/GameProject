@@ -7,6 +7,9 @@ namespace Game {
 	private:
 		typedef Engine::Game Super;
 
+	protected:
+		std::string configFile = "game.cfg";
+
 	public:
 		SpaceShooterGame();
 		~SpaceShooterGame();

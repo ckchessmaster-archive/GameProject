@@ -1,6 +1,5 @@
 #pragma once
-
-#include <chrono>
+#include <string>
 
 namespace Engine {
 	class Game
@@ -16,6 +15,11 @@ namespace Engine {
 		int tps; //ticks per second
 
 		GameState gameState = stopped;
+
+	protected:
+		virtual void loadConfig();
+
+		std::string configFile = "defaultGame.cfg";
 
 	public:
 		Game();

@@ -30,6 +30,9 @@
   <ItemGroup>
     <ClInclude Include="SpaceShooterGame.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="game.cfg" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{8D720FAD-BCD8-46AF-886F-93CFF5444B79}</ProjectGuid>
