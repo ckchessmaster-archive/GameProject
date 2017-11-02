@@ -20,6 +20,7 @@ namespace Engine {
 		this->game = game;
 	}
 
+	// Start the renderer (creates a new window and begins calling frames)
 	void SFML2DRenderer::start()
 	{
 		Logger::log("Starting SFML Renderer...");
@@ -40,6 +41,7 @@ namespace Engine {
 		}
 	}
 
+	// Called to go to the next frame
 	void SFML2DRenderer::frame()
 	{
 		if (window->isOpen()) {
@@ -52,7 +54,7 @@ namespace Engine {
 					window->close();
 					game->setGameState(GameState::stopped);
 				}
-			}
+			}//end events
 
 			// render the frame
 			renderFrame();
@@ -62,6 +64,7 @@ namespace Engine {
 		}//end window open check
 	}//end frame()
 
+	// Render the current scene to the screen
 	void SFML2DRenderer::renderFrame() const
 	{
 		Scene scene = game->getScene();
@@ -77,5 +80,5 @@ namespace Engine {
 		}
 
 		window->display();
-	}
+	}//end renderFrame
 }//end namespace

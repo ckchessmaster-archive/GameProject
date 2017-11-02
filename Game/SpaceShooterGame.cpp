@@ -1,6 +1,7 @@
 #include "SpaceShooterGame.h"
 #include "Logger.h"
 #include "Object.h"
+#include "SFMLPlayerController.h"
 
 #include <iostream>
 
@@ -21,8 +22,10 @@ namespace Game {
 		Super::init();
 
 		Engine::Logger::log("Initializing SpaceShooterGame...");
+
 		Engine::Object test1;
 		test1.setLocation(Engine::Location{ 10, 10 });
+		test1.addComponent(Engine::SFMLPlayerController(&test1));
 		scene.addObject(test1);
 
 		Engine::Object test2;
