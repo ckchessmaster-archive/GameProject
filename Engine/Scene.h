@@ -13,7 +13,7 @@ namespace Engine {
 		Scene();
 		~Scene();
 
-		void addObject(const Object &object);
-		std::vector<Object> getObjects() const;
+		void addObject(const Object &obj) { objects.push_back(obj); }
+		std::vector<Object> getObjects() const { return objects; }
 	};
 }
