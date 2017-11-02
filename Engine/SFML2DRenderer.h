@@ -9,6 +9,8 @@ namespace Engine {
 	private:
 		sf::RenderWindow* window;
 
+		void renderFrame() const;
+
 	public:
 		SFML2DRenderer();
 		~SFML2DRenderer();

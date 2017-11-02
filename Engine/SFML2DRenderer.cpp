@@ -43,8 +43,7 @@ namespace Engine {
 	void SFML2DRenderer::frame()
 	{
 		if (window->isOpen()) {
-			Scene scene = game->getScene();
-
+			// take care of window events
 			sf::Event event;
 			while (window->pollEvent(event))
 			{
@@ -55,18 +54,28 @@ namespace Engine {
 				}
 			}
 
-			// clear the window with black color
-			window->clear(sf::Color::Black);
-
-			// draw everything here...
-			// window.draw(...);
-
-			// end the current frame
-			window->display();
+			// render the frame
+			renderFrame();
 		}
 		else {
 			game->setGameState(GameState::stopped);
+		}//end window open check
+	}//end frame()
+
+	void SFML2DRenderer::renderFrame() const
+	{
+		Scene scene = game->getScene();
+		std::vector<Object> objects = scene.getObjects();
+
+		for (int i = 0; i < objects.size(); i++) {
+			sf::CircleShape obj(10);
+			obj.setFillColor(sf::Color(100, 250, 50));
+			obj.setOutlineThickness(2);
+			obj.setOutlineColor(sf::Color(250, 150, 100));
+			obj.setPosition(objects.at(i).getLocation().x, objects.at(i).getLocation().y);
+			window->draw(obj);
 		}
-		
+
+		window->display();
 	}
-}
+}//end namespace
