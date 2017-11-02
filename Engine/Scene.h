@@ -1,14 +1,19 @@
 #pragma once
+#include "Object.h"
+
 #include <vector>
 
 namespace Engine {
 	class Scene
 	{
-	protected:
-		std::vector<int> test;
+	private:
+		std::vector<Object> objects;
 
 	public:
 		Scene();
 		~Scene();
+
+		void addObject(const Object &object);
+		std::vector<Object> getObjects() const;
 	};
 }
