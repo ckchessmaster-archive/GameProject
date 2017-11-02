@@ -1,5 +1,6 @@
 #include "SpaceShooterGame.h"
 #include "Logger.h"
+#include "Object.h"
 
 #include <iostream>
 
@@ -20,19 +21,25 @@ namespace Game {
 		Super::init();
 
 		Engine::Logger::log("Initializing SpaceShooterGame...");
+		Engine::Object test1;
+		test1.setLocation(Engine::Location{ 10, 10 });
+		scene.addObject(test1);
+
+		Engine::Object test2;
+		test2.setLocation(Engine::Location{ 50, 50 });
+		scene.addObject(test2);
 	}
 
 	void SpaceShooterGame::start()
 	{
-		Super::start();
-
 		Engine::Logger::log("Starting SpaceShooterGame...");
+		Super::start();
 	}
 
 	void SpaceShooterGame::tick()
 	{
 		Super::tick();
-		std::cout << "tick!\n";
+		//std::cout << "tick!\n";
 		// game logic here
 	}
 }

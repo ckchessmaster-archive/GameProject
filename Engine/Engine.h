@@ -8,7 +8,7 @@ namespace Engine {
 	{
 	private:
 		Game* game;
-		Renderer renderer;
+		Renderer* renderer;
 
 	public:
 		Engine();

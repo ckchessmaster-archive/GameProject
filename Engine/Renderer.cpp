@@ -7,18 +7,8 @@ namespace Engine {
 	{
 	}
 
-	void Renderer::startThread(Renderer &renderer)
+	void Renderer::startThread(Renderer* renderer)
 	{
-		renderer.start();
-	}
-
-	void Renderer::init()
-	{
-		Logger::log("Initializing renderer...");
-	}
-
-	void Renderer::start()
-	{
-		Logger::log("Starting renderer...");
+		renderer->start();
 	}
 }

@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include "Logger.h"
+#include "SFML2DRenderer.h"
 
 #include <thread>
 
@@ -17,7 +18,9 @@ namespace Engine {
 		Logger::init();
 		game = newGame;
 		game->init();
-		renderer.init();
+
+		renderer = new SFML2DRenderer();
+		renderer->init(game);
 	}
 
 	void Engine::start()

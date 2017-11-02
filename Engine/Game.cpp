@@ -15,7 +15,7 @@ namespace Engine {
 
 	void Game::loadConfig()
 	{
-		
+		tps = 30;
 	}
 
 	void Game::startThread(Game* game)

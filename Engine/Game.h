@@ -1,25 +1,30 @@
 #pragma once
+#include "Scene.h"
+
 #include <string>
 
 namespace Engine {
+	enum GameState {
+		starting,
+		running,
+		ending,
+		stopped
+	};
 	class Game
 	{
-		enum GameState {
-			starting,
-			running,
-			ending,
-			stopped
-		};
-
 	private:
-		int tps; //ticks per second
-
-		GameState gameState = stopped;
+		int tps = 1; //ticks per second
 
 	protected:
-		virtual void loadConfig();
-
+		GameState gameState = stopped;
+		Scene scene;
+		
 		std::string configFile = "defaultGame.cfg";
+
+		virtual void loadConfig();
+		virtual void tick();
+
+		
 
 	public:
 		Game();
@@ -29,6 +34,9 @@ namespace Engine {
 
 		virtual void init();
 		virtual void start();
-		virtual void tick();
+
+		GameState getGameState() const { return gameState; }
+		Scene getScene() const { return scene; }
+		void setGameState(GameState gameState) { this->gameState = gameState; }
 	};
 }
