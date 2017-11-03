@@ -12,6 +12,9 @@ namespace Engine {
 
 	void Scene::tick()
 	{
-
+		// tick all associated objects
+		for (int i = 0; i < objects.size(); i++) {
+			objects.at(i).tick();
+		}
 	}
 }

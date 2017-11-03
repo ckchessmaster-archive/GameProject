@@ -50,5 +50,6 @@ namespace Engine {
 
 	void Game::tick()
 	{
+		scene.tick();
 	}
 }
