@@ -13,5 +13,9 @@ namespace Engine {
 
 	void Object::tick()
 	{
+		// tick over all components
+		for (auto const& x : components) {
+			x.second->tick();
+		}
 	}
 }

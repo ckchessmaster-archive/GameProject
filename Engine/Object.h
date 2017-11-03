@@ -1,6 +1,6 @@
 #pragma once
 #include "Component.h"
-
+#include "Logger.h"
 #include <map>
 
 namespace Engine {

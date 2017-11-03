@@ -5,8 +5,6 @@ namespace Engine {
 	class SFMLPlayerController : public Controller
 	{
 	private:
-		bool isMovingX = false;
-		bool isMovingY = false;
 
 	public:
 		SFMLPlayerController(Object* owner);

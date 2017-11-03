@@ -25,7 +25,8 @@ namespace Game {
 
 		Engine::Object test1;
 		test1.setLocation(Engine::Location{ 10, 10 });
-		test1.addComponent(&Engine::SFMLPlayerController(&test1));
+		Engine::SFMLPlayerController* controller = new Engine::SFMLPlayerController(&test1);
+		test1.addComponent(controller);
 		scene.addObject(test1);
 
 		Engine::Object test2;

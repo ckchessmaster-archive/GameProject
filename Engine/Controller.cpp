@@ -1,5 +1,6 @@
 #include "Controller.h"
 #include "Object.h"
+#include <string>
 
 namespace Engine {
 
@@ -14,7 +15,12 @@ namespace Engine {
 
 	void Controller::move(int x, int y)
 	{
+		// need to initialize curLoc
 		Location curLoc = owner->getLocation();
-		owner->setLocation(Location{ (curLoc.x + x), (curLoc.y + y) });
+		Location newLoc{};
+		newLoc.x += x;
+		newLoc.y += y;
+		Logger::log("Location: " + std::to_string(curLoc.x));
+		//owner->setLocation(newLoc);
 	}
 }
