@@ -1,4 +1,5 @@
 #include "SFMLPlayerController.h"
+#include "Object.h"
 
 
 namespace Engine {
@@ -8,6 +9,10 @@ namespace Engine {
 
 
 	SFMLPlayerController::~SFMLPlayerController()
+	{
+	}
+
+	void SFMLPlayerController::tick()
 	{
 	}
 }

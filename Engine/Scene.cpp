@@ -6,8 +6,12 @@ namespace Engine {
 	{
 	}
 
-
 	Scene::~Scene()
 	{
+	}
+
+	void Scene::tick()
+	{
+
 	}
 }

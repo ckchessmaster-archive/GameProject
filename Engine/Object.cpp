@@ -10,4 +10,8 @@ namespace Engine {
 	Object::~Object()
 	{
 	}
+
+	void Object::tick()
+	{
+	}
 }

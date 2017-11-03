@@ -1,8 +1,9 @@
 #include "Controller.h"
+#include "Object.h"
 
 namespace Engine {
 
-	Controller::Controller(Object* owner) : Super(owner)
+	Controller::Controller(Object* owner) : Component(owner)
 	{
 	}
 

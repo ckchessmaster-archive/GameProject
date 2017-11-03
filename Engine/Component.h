@@ -1,9 +1,9 @@
 #pragma once
-#include "Object.h"
 
 #include <string>
 
 namespace Engine {
+	class Object; // tell the compiler about the owner
 	class Component
 	{
 	private:
@@ -15,6 +15,8 @@ namespace Engine {
 	public:
 		Component(Object* owner);
 		~Component();
+
+		virtual void tick();
 
 		std::string getName() const { return name; }
 		void setName(const std::string name) { this->name = name; }

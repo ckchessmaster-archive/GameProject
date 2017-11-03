@@ -1,7 +1,8 @@
 #include "Component.h"
-
+#include "Object.h"
 
 namespace Engine {
+	
 	Component::Component(Object* owner)
 	{
 		this->owner = owner;
@@ -9,6 +10,10 @@ namespace Engine {
 
 
 	Component::~Component()
+	{
+	}
+
+	void Component::tick()
 	{
 	}
 }
