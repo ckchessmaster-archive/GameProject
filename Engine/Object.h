@@ -24,6 +24,6 @@ namespace Engine {
 		void addComponent(Component* comp) { components.insert(std::make_pair(comp->getName(), comp)); }
 		
 		Location getLocation() const { return location; }
-		void setLocation(const Location &loc) { location = loc; }
+		void setLocation(const struct Location loc);
 	};
 }

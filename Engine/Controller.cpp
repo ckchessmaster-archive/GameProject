@@ -21,6 +21,6 @@ namespace Engine {
 		newLoc.x += x;
 		newLoc.y += y;
 		Logger::log("Location: " + std::to_string(curLoc.x));
-		//owner->setLocation(newLoc);
+		owner->setLocation(newLoc);
 	}
 }
