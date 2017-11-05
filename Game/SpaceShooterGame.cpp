@@ -23,18 +23,21 @@ namespace Game {
 
 		Engine::Logger::log("Initializing SpaceShooterGame...");
 
-		Engine::Object test1;
-		Engine::Location loc {};
-		loc.x = 10; loc.y = 10;
-		test1.setLocation(loc);
-		Engine::SFMLPlayerController* controller = new Engine::SFMLPlayerController(&test1);
-		test1.addComponent(controller);
-		scene.addObject(test1);
+		test1 = new Engine::Object;
+		Engine::Transform trans {};
+		trans.position.x = 10; trans.position.y = 10;
+		test1->setTransform(trans);
+		test1->setName("testObject1");
+		Engine::SFMLPlayerController* controller = new Engine::SFMLPlayerController(test1);
+		test1->addComponent(controller);
+		scene.addObject(*test1);
+		
 
 		Engine::Object test2;
-		Engine::Location loc2 {};
-		loc2.x = 50; loc2.y = 50;
-		test2.setLocation(loc2);
+		Engine::Transform trans2 {};
+		trans2.position.x = 50; trans2.position.y = 50;
+		test2.setTransform(trans2);
+		test2.setName("testObject2");
 		scene.addObject(test2);
 	}
 

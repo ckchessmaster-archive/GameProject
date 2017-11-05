@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -29,6 +29,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SFML2DRenderer.h" />
     <ClInclude Include="SFMLPlayerController.h" />
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp" />
@@ -41,6 +42,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SFML2DRenderer.cpp" />
     <ClCompile Include="SFMLPlayerController.cpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="engine.cfg" />

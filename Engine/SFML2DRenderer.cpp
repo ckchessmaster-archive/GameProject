@@ -75,7 +75,7 @@ namespace Engine {
 			obj.setFillColor(sf::Color(100, 250, 50));
 			obj.setOutlineThickness(2);
 			obj.setOutlineColor(sf::Color(250, 150, 100));
-			obj.setPosition(objects.at(i).getLocation().x, objects.at(i).getLocation().y);
+			obj.setPosition(objects.at(i).getTransform().position.x, objects.at(i).getTransform().position.y);
 			window->draw(obj);
 		}
 

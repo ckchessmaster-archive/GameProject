@@ -1,18 +1,17 @@
 #pragma once
 #include "Component.h"
 #include "Logger.h"
+#include "Transform.h"
+
 #include <map>
 
 namespace Engine {
-	struct Location {
-		int x;
-		int y;
-	};
 	class Object
 	{
 	private:
 		std::map<std::string, Component*> components;
-		Location location;
+		Transform transform;
+		std::string name;
 
 	public:
 		Object();
@@ -21,9 +20,12 @@ namespace Engine {
 		virtual void tick();
 
 		std::map<std::string, Component*> getComponents() const { return components; }
-		void addComponent(Component* comp) { components.insert(std::make_pair(comp->getName(), comp)); }
+		void addComponent(Component* comp);
 		
-		Location getLocation() const { return location; }
-		void setLocation(const struct Location loc);
+		Transform getTransform() const { return transform; }
+		void setTransform(Transform trans);
+
+		std::string getName() const { return name; }
+		void setName(std::string name);
 	};
 }

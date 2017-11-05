@@ -6,6 +6,7 @@ namespace Game {
 	{
 	private:
 		typedef Engine::Game Super;
+		Engine::Object* test1;
 
 	protected:
 		std::string configFile = "game.cfg";
