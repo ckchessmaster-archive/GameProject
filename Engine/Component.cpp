@@ -3,9 +3,8 @@
 
 namespace Engine {
 	
-	Component::Component(Object* owner)
+	Component::Component()
 	{
-		this->owner = owner;
 	}
 
 

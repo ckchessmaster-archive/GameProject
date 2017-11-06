@@ -4,7 +4,7 @@
 
 namespace Engine {
 
-	Controller::Controller(Object* owner) : Component(owner)
+	Controller::Controller()
 	{
 	}
 
@@ -15,12 +15,11 @@ namespace Engine {
 
 	void Controller::move(int x, int y)
 	{
-		// need to initialize curLoc
-		//Location curLoc = owner->getLocation();
-		//Location newLoc{};
-		//newLoc.x += x;
-		//newLoc.y += y;
-		//Logger::log("Location: " + std::to_string(curLoc.x));
-		//owner->setLocation(newLoc);
+		std::shared_ptr<Object> own = owner.lock();
+		Transform trans = own->getTransform();
+		trans.position.x += x;
+		trans.position.y += y;
+
+		own->setTransform(trans);
 	}
 }

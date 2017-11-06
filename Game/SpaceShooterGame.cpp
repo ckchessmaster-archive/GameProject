@@ -5,6 +5,7 @@
 
 #include <iostream>
 
+using namespace Engine;
 namespace Game {
 
 	SpaceShooterGame::SpaceShooterGame()
@@ -23,22 +24,22 @@ namespace Game {
 
 		Engine::Logger::log("Initializing SpaceShooterGame...");
 
-		test1 = new Engine::Object;
-		Engine::Transform trans {};
+		
+		std::shared_ptr<Object> test1(new Object());
+		Engine::Transform trans{};
 		trans.position.x = 10; trans.position.y = 10;
 		test1->setTransform(trans);
 		test1->setName("testObject1");
-		Engine::SFMLPlayerController* controller = new Engine::SFMLPlayerController(test1);
-		test1->addComponent(controller);
-		scene.addObject(*test1);
-		
+		std::unique_ptr<Engine::SFMLPlayerController> controller(new Engine::SFMLPlayerController());
+		test1->addComponent(std::move(controller));
+		scene.addObject(std::move(test1));
 
-		Engine::Object test2;
+		std::shared_ptr<Object> test2(new Object());
 		Engine::Transform trans2 {};
 		trans2.position.x = 50; trans2.position.y = 50;
-		test2.setTransform(trans2);
-		test2.setName("testObject2");
-		scene.addObject(test2);
+		test2->setTransform(trans2);
+		test2->setName("testObject2");
+		scene.addObject(std::move(test2));
 	}
 
 	void SpaceShooterGame::start()
@@ -50,7 +51,7 @@ namespace Game {
 	void SpaceShooterGame::tick()
 	{
 		Super::tick();
-		//std::cout << "tick!\n";
+
 		// game logic here
 	}
 }

@@ -7,7 +7,7 @@ namespace Engine {
 	private:
 
 	public:
-		Controller(Object* owner);
+		Controller();
 		~Controller();
 
 		void move(int x, int y);

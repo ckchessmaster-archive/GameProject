@@ -1,13 +1,15 @@
 #pragma once
 #include "Object.h"
 
+#include <memory>
 #include <vector>
+
 
 namespace Engine {
 	class Scene
 	{
 	private:
-		std::vector<Object> objects;
+		std::vector<std::shared_ptr<Object>> objects;
 
 	public:
 		Scene();
@@ -15,7 +17,7 @@ namespace Engine {
 
 		virtual void tick();
 
-		void addObject(const Object &obj) { objects.push_back(obj); }
-		std::vector<Object> getObjects() const { return objects; }
+		void addObject(std::shared_ptr<Object>);
+		std::vector<std::shared_ptr<Object>>* getObjects() { return &objects; }
 	};
 }

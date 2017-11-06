@@ -12,6 +12,7 @@ namespace Engine {
 
 	Object::~Object()
 	{
+		// need to delete all components
 	}
 
 	void Object::tick()
@@ -24,9 +25,9 @@ namespace Engine {
 		
 	}
 
-	void Object::addComponent(Component* comp)
+	void Object::addComponent(std::unique_ptr<Component> comp)
 	{
-		components.insert(std::make_pair(comp->getName(), comp));
+		components.emplace(comp.get()->getName(), std::move(comp));
 	}
 
 	void Object::setTransform(Transform trans)

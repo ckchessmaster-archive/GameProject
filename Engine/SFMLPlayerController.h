@@ -7,7 +7,7 @@ namespace Engine {
 	private:
 
 	public:
-		SFMLPlayerController(Object* owner);
+		SFMLPlayerController();
 		~SFMLPlayerController();
 
 		virtual void tick();

@@ -68,14 +68,14 @@ namespace Engine {
 	void SFML2DRenderer::renderFrame() const
 	{
 		Scene scene = game->getScene();
-		std::vector<Object> objects = scene.getObjects();
+		auto objects = scene.getObjects();
 
-		for (int i = 0; i < objects.size(); i++) {
+		for (int i = 0; i < objects->size(); i++) {
 			sf::CircleShape obj(10);
 			obj.setFillColor(sf::Color(100, 250, 50));
 			obj.setOutlineThickness(2);
 			obj.setOutlineColor(sf::Color(250, 150, 100));
-			obj.setPosition(objects.at(i).getTransform().position.x, objects.at(i).getTransform().position.y);
+			obj.setPosition(objects->at(i)->getTransform().position.x, objects->at(i)->getTransform().position.y);
 			window->draw(obj);
 		}
 
