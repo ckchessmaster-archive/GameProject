@@ -18,5 +18,7 @@ namespace Engine {
 		virtual void init(Game* game);
 		virtual void start();
 		virtual void frame();
+
+		sf::RenderWindow* getWindow() { return window; }
 	};
 }

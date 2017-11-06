@@ -7,6 +7,7 @@
 namespace Engine {
 	Engine::Engine()
 	{
+		//engine = this;
 	}
 
 	Engine::~Engine()

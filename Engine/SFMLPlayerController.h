@@ -4,7 +4,9 @@
 namespace Engine {
 	class SFMLPlayerController : public Controller
 	{
-	private:
+	protected:
+		virtual void handleKeyboard();
+		virtual void handleMouse();
 
 	public:
 		SFMLPlayerController();

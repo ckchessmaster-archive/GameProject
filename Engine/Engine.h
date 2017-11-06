@@ -7,6 +7,8 @@ namespace Engine {
 	class Engine
 	{
 	private:
+		//static Engine* engine;
+
 		Game* game;
 		Renderer* renderer;
 
@@ -16,5 +18,8 @@ namespace Engine {
 
 		void init(Game* game);
 		void start();
+
+		Renderer* getRenderer() { return renderer; }
+		//static Engine* getEngine() { return engine; }
 	};
 }

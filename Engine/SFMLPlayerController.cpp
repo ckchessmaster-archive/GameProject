@@ -18,13 +18,18 @@ namespace Engine {
 
 	void SFMLPlayerController::tick()
 	{
-		// lock the owner while we tick
-		std::shared_ptr<Object> own = owner.lock();
+		handleKeyboard();
+		handleMouse();
+
+	}//end tick()
+
+	void SFMLPlayerController::handleKeyboard() 
+	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 			Logger::log("Moving up!");
 			move(0, -1);
 		}
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 			Logger::log("Moving down!");
 			move(0, 1);
 		}
@@ -37,5 +42,13 @@ namespace Engine {
 			Logger::log("Moving right!");
 			move(1, 0);
 		}
-	}//end tick()
+	}//end handle keyboard
+
+	void SFMLPlayerController::handleMouse()
+	{
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			auto pos = sf::Mouse::getPosition();
+			Logger::log("Left Mouse button clicked at position: " + std::to_string(pos.x) + " " + std::to_string(pos.y));
+		}
+	}//end handleMouse
 }
